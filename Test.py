@@ -2,6 +2,7 @@
 OrangeCarrier WebSocket Test (Local Debug Version)
 """
 import websocket
+websocket.enableTrace(True)  # এটা যোগ করো শুরুতে
 import json
 import time
 
