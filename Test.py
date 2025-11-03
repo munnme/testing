@@ -46,8 +46,9 @@ def run_socket():
     def on_open(ws):
         print("✅ Connected to OrangeCarrier WebSocket!")
         ws.send("40")  # complete socket.io connect
-        threading.Thread(target=send_heartbeat, daemon=True).start()
-        threading.Thread(target=keep_alive_event, daemon=True).start()
+        # Pass ws as argument when starting threads 👇
+        threading.Thread(target=send_heartbeat, args=(ws,), daemon=True).start()
+        threading.Thread(target=keep_alive_event, args=(ws,), daemon=True).start()
 
     def on_message(ws, message):
         print("📩 Received:", message)
