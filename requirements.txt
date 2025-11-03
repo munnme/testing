@@ -1,0 +1,7 @@
+python-socketio[client]
+requests
+flask
+gunicorn
+beautifulsoup4
+websocket-client
+python-telegram-bot==13.15
